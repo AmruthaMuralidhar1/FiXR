@@ -1,0 +1,234 @@
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Apply the background image to the body */
+body {
+  background-image: url('1c.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Glass effect */
+  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7); /* Darker border for depth */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Optional: limit the max-width */
+}
+
+.navbar-brand {
+  font-size: 28px;
+  color: #ffffff; /* White text color */
+  font-weight: 700;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 25px;
+}
+
+.navbar-menu a {
+  font-size: 18px;
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4); /* Glassy background for buttons */
+  backdrop-filter: blur(8px); /* Glassmorphism blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.navbar-menu a:hover {
+  background: rgba(173, 216, 230, 0.4); /* Light blue background on hover */
+  color: #0b0a0a; /* Dark text color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Dashboard styles */
+.dashboard {
+  display: flex;
+  margin-top: 70px; /* Space for the fixed navbar */
+  height: calc(100vh - 70px); /* Adjust height for the fixed navbar */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background: rgba(0, 0, 0, 0.4); /* Glassmorphism effect */
+  border-right: 2px solid rgba(0, 0, 0, 0.6); /* Darker border for depth */
+  backdrop-filter: blur(12px); /* Glassmorphism blur effect */
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+}
+
+.sidebar h2 {
+  color: #ffffff; /* White text color */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.5); /* Glassy background for links */
+  backdrop-filter: blur(8px); /* Glassmorphism blur effect */
+  display: block;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 105, 180, 0.4); /* Light pink background on hover */
+  color: #0b0a0a; /* Dark text color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Card styles */
+.card {
+  background: rgba(0, 0, 0, 0.4); /* Glassmorphism effect */
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.6); /* Darker border for depth */
+  backdrop-filter: blur(12px); /* Glassmorphism blur effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: #ffffff; /* White text color */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card-content {
+  color: #ffffff; /* White text color */
+}
+
+/* Metric Styles */
+.metric {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1); /* Slightly lighter glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #ffffff; /* White text color */
+}
+
+.metric p {
+  font-size: 26px;
+  margin: 0;
+  color: #ffffff; /* White text color */
+}
+
+/* Progress Bar Styles */
+.progress {
+  margin-bottom: 20px;
+}
+
+.progress-label {
+  color: #ffffff; /* White text color */
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1); /* Light background for progress bars */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar .green {
+  background: #4caf50; /* Green */
+}
+
+.progress-bar .yellow {
+  background: #ffeb3b; /* Yellow */
+}
+
+.progress-bar .red {
+  background: #f44336; /* Red */
+}
+
+/* Buttons */
+.tool-btn {
+  font-size: 16px;
+  color: #ffffff; /* White text color */
+  padding: 12px 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #00bcd4, #3f51b5); /* Gradient background */
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.tool-btn:hover {
+  background: linear-gradient(135deg, #1e88e5, #3949ab); /* Duller gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}

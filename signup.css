@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  background-image: url('1c.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;  
+}
+
+.login-container {
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black for glass effect */
+  border-radius: 35px;
+  border: 2px solid rgba(0, 0, 0, 0.6); /* Darker border for more depth */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  text-align: center;
+  height: 480px;
+  width: 400px;
+}
+
+.login-container h1 {
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-weight: 200;
+  color: white;
+  font-size: 28px;
+}
+
+.inputs {
+  height: 40px;
+  width: 300px;
+  border: 0.5px solid rgba(255, 255, 255, 0.5); /* Lighter border for inputs */
+  border-radius: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3); /* Slightly transparent background for inputs */
+  color: white; /* Text color inside inputs */
+}
+
+.inputs::placeholder {
+  font-family: 'Raleway', sans-serif;
+  color: rgba(255, 255, 255, 0.7); /* Placeholder text color */
+}
+
+.username {
+  margin-top: 20px;
+}
+
+.btn-1 {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  margin-top: 20px;
+}
+
+.already {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  margin-top: 5px;
+}
+
+.already a {
+  text-decoration: underline;
+  color: white;
+}
+
+#password-toggle {
+  padding-bottom: 20px;
+  color: white;
+}
+
+.formerror {
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: #c1fb04;
+}

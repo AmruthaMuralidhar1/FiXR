@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="dashboard.css" />
+  <title>Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">FixxAR</div>
+      <ul class="navbar-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard Content -->
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">AR Tools</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+    </aside>
+    
+    <main class="main-content">
+      <section class="card overview">
+        <h2>Overview</h2>
+        <div class="card-content">
+          <div class="metric">
+            <h3>Total Users</h3>
+            <p>1,250</p>
+          </div>
+          <div class="metric">
+            <h3>Active Sessions</h3>
+            <p>356</p>
+          </div>
+          <div class="metric">
+            <h3>New Signups</h3>
+            <p>47</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card analytics">
+        <h2>Analytics</h2>
+        <div class="card-content">
+          <canvas id="analyticsChart"></canvas>
+        </div>
+      </section>
+      
+      <section class="card projects">
+        <h2>Projects</h2>
+        <div class="card-content">
+          <ul>
+            <li>Project Alpha - In Progress</li>
+            <li>Project Beta - Completed</li>
+            <li>Project Gamma - Upcoming</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section class="card ar-tools">
+        <h2>AR Tools</h2>
+        <div class="card-content">
+          <button class="tool-btn">AR Designer</button>
+          <button class="tool-btn">AR Viewer</button>
+          <button class="tool-btn">AR Analytics</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer style="text-align: center; padding: 10px; position: absolute; bottom: 0; width: 100%;">
+    <p style="color: #1c1717">&copy; 2023 Amrutha Muralidhar</p>
+  </footer>
+
+  <script>// Example JavaScript for initializing a chart
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('analyticsChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line', // Choose the chart type
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [{
+        label: 'Monthly Visits',
+        data: [10, 20, 15, 30, 25, 40, 35],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

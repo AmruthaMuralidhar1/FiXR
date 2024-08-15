@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page with Black Background</title>
+    <style>
+        /* Apply black background to the body */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black; /* Black background */
+            color: white; /* White text color */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+
+        /* Header style */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Company name style */
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Container for buttons */
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Style for glassy buttons */
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1); /* Glassy effect */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3); /* Slightly lighter on hover */
+        }
+
+        /* Content container with padding */
+        .container {
+            padding: 15px; /* 10 pixels padding */
+ margin-top: 40px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Optional: Centered content style */
+        .content {
+            background: url('ds.jpg') no-repeat center center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="company-name">FiXR Dashboard</div>
+        <div class="buttons">
+            <button class="button">Train</button>
+            <button class="button">Predict</button>
+            <button class="button">Settings</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <!-- Content can go here if needed -->
+        </div>
+    </div>
+</body>
+
+</html>
