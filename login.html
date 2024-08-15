@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="login.css" />
+  <title>Login</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">FiXR</div>
+      <ul class="navbar-menu">
+        <li><a href="#">Try It</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <section id="login">
+    <div class="login-wrapper">
+      <div class="additional-box">
+        <!--Blank box-->
+      </div>
+      <div class="login-container">
+        <h1>Login</h1>
+        <div id="name">
+          <input type="text" id="username" class="inputs username" placeholder="Username" />
+          <div class="formerror"></div>
+        </div>
+        <div id="password1">
+          <input type="password" id="password" class="inputs password" placeholder="Password" />
+          <br />
+          <div class="formerror"></div>
+        </div>
+        <button class="btn-1" onclick="check()">sign in</button>
+        <div class="already">New here? <a href="./signup.html">Signup</a></div>
+      </div>
+    </div>
+  </section>
+  <footer style="text-align: center; padding: 10px; position: absolute; bottom: 0; width: 100%;">
+    <p style="color: #1c1717">&copy; 2023 Vortex Squad</p>
+  </footer>
+  <script src="login.js"></script>
+</body>
+</html>
