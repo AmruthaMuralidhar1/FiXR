@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Raleway', sans-serif;
+  background-attachment: fixed; 
 }
 
 /* Navbar styles */
@@ -54,7 +55,7 @@ body {
   margin-left: 25px;
 }
 
-.navbar-menu a {
+.t-btn {
   font-size: 18px;
   color: #ffffff; /* White text color */
   text-decoration: none;
@@ -66,12 +67,11 @@ body {
   transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
-.navbar-menu a:hover {
+.t-btn:hover {
   background: rgba(173, 216, 230, 0.4); /* Light blue background on hover */
   color: #0b0a0a; /* Dark text color on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
-
 /* Dashboard styles */
 .dashboard {
   display: flex;

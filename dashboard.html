@@ -3,111 +3,240 @@
 <head>
   <link rel="stylesheet" href="dashboard.css" />
   <title>Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: transparent;
+      color: #fff;
+      padding: 20px 0; /* Added top and bottom padding for the header */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-menu li {
+      margin-left: 20px;
+    }
+
+    .navbar-menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .virtual-assistant-btn {
+  font-size: 16px;
+  color: #ffffff; /* White text color */
+  padding: 12px 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #00bcd4, #3f51b5); /* Gradient background */
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    .virtual-assistant-btn:hover {
+  background: linear-gradient(135deg, #1e88e5, #3949ab); /* Duller gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    .main-content {
+      padding: 20px;
+      padding-top: 80px; /* Added padding to account for the fixed header */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ar-tools {
+      margin-bottom: 20px;
+    }
+
+    .ar-tools .button-container {
+      text-align: center;
+    }
+
+    .ar-tools .tool-btn {
+      display: inline-block;
+      margin: 5px;
+    }
+
+    .charts-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      padding: 20px;
+      border: 1px solid grey;
+      border-radius: 8px;
+    }
+
+    .card-content canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    footer {
+      display: none; /* Ensure the footer is hidden */
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
-      <div class="navbar-brand">FixxAR</div>
+      <div class="navbar-brand">FiXR</div>
       <ul class="navbar-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#"class="t-btn">Home</a></li>
+        <li><a href="#"class="t-btn">Profile</a></li>
+        <li><a href="#"class="t-btn">Settings</a></li>
+        <li><a href="#"class="t-btn">Logout</a></li>
+        <li><a href="#" class="virtual-assistant-btn">Virtual Assistant</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Main Dashboard Content -->
-  <div class="dashboard">
-    <aside class="sidebar">
-      <h2>Menu</h2>
-      <ul>
-        <li><a href="#">Overview</a></li>
-        <li><a href="#">Analytics</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">AR Tools</a></li>
-        <li><a href="#">Reports</a></li>
-      </ul>
-    </aside>
-    
-    <main class="main-content">
-      <section class="card overview">
-        <h2>Overview</h2>
+  <main class="main-content">
+    <section class="card ar-tools">
+      <h2>AR Training</h2>
+      <div class="button-container">
+        <button class="tool-btn">Conveyor Belt</button>
+        <button class="tool-btn">Fork Lift</button>
+        <button class="tool-btn">Automated Guided Vehicles</button>
+        <button class="tool-btn">Palletizers and Depalletizers</button>
+        <button class="tool-btn">Wrapping Machines</button>
+        <button class="tool-btn">Labeling Machines</button>
+      </div>
+    </section>
+    <div class="charts-container">
+      <section class="card analytics">
+        <h2>Analytics</h2>
         <div class="card-content">
-          <div class="metric">
-            <h3>Total Users</h3>
-            <p>1,250</p>
-          </div>
-          <div class="metric">
-            <h3>Active Sessions</h3>
-            <p>356</p>
-          </div>
-          <div class="metric">
-            <h3>New Signups</h3>
-            <p>47</p>
-          </div>
+          <canvas id="chart1"></canvas>
         </div>
       </section>
       
       <section class="card analytics">
-        <h2>Analytics</h2>
+        <h2>Sales Data</h2>
         <div class="card-content">
-          <canvas id="analyticsChart"></canvas>
+          <canvas id="chart2"></canvas>
         </div>
       </section>
       
-      <section class="card projects">
-        <h2>Projects</h2>
+      <section class="card analytics">
+        <h2>User Engagement</h2>
         <div class="card-content">
-          <ul>
-            <li>Project Alpha - In Progress</li>
-            <li>Project Beta - Completed</li>
-            <li>Project Gamma - Upcoming</li>
-          </ul>
+          <canvas id="chart3"></canvas>
         </div>
       </section>
-      
-      <section class="card ar-tools">
-        <h2>AR Tools</h2>
-        <div class="card-content">
-          <button class="tool-btn">AR Designer</button>
-          <button class="tool-btn">AR Viewer</button>
-          <button class="tool-btn">AR Analytics</button>
-        </div>
-      </section>
-    </main>
-  </div>
+    </div>
+  </main>
 
-  <footer style="text-align: center; padding: 10px; position: absolute; bottom: 0; width: 100%;">
-    <p style="color: #1c1717">&copy; 2023 Amrutha Muralidhar</p>
-  </footer>
-
-  <script>// Example JavaScript for initializing a chart
-document.addEventListener('DOMContentLoaded', function() {
-  var ctx = document.getElementById('analyticsChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line', // Choose the chart type
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [{
-        label: 'Monthly Visits',
-        data: [10, 20, 15, 30, 25, 40, 35],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  <script>
+    // Example JavaScript for initializing charts
+    document.addEventListener('DOMContentLoaded', function() {
+      var ctx1 = document.getElementById('chart1').getContext('2d');
+      new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [{
+            label: 'Monthly Visits',
+            data: [10, 20, 15, 30, 25, 40, 35],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
         }
-      }
-    }
-  });
-});
-</script>
+      });
+      
+      var ctx2 = document.getElementById('chart2').getContext('2d');
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+          datasets: [{
+            label: 'Sales',
+            data: [5000, 7000, 4000, 6000],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+      
+      var ctx3 = document.getElementById('chart3').getContext('2d');
+      new Chart(ctx3, {
+        type: 'pie',
+        data: {
+          labels: ['Product A', 'Product B', 'Product C'],
+          datasets: [{
+            label: 'Product Distribution',
+            data: [30, 50, 20],
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 159, 64, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true
+        }
+      });
+    });
+  </script>
 </body>
 </html>
